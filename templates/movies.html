@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Movies List</title>
+</head>
+<body>
+    <h1>Movies List</h1>
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie.title }} ({{ movie.release_year }}) - {{ movie.genre }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add a New Movie</h2>
+    <form method="POST" action="/movies">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="genre">Genre:</label><br>
+        <input type="text" id="genre" name="genre"><br><br>
+
+        <label for="release_year">Release Year:</label><br>
+        <input type="number" id="release_year" name="release_year"><br><br>
+
+        <button type="submit">Add Movie</button>
+    </form>
+</body>
+</html>
